@@ -29,27 +29,66 @@ class MyWidget extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.blue[400],
         ),
-        body: Column(
-          //mainAxisAlignment is used to align the children of the column widget
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body:
+            //Expanded widget is used to expand the children of the row and column widget
+            Row(
           children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(30.0),
-              color: Colors.cyan,
-              child: const Text("one"),
+            Expanded(
+              //total is 6 so 3/6=1/2 and 2/6=1/3 and 1/6=1/6
+              //flex is used to give the ratio of the children of the row and column widget
+              flex: 1,
+              child: Container(
+                  padding: const EdgeInsets.all(30.0),
+                  color: Colors.cyan,
+                  child: const Text("1")),
             ),
-            Container(
-              padding: const EdgeInsets.all(40.0),
-              color: Colors.grey,
-              child: const Text("two"),
+            Expanded(
+              flex: 1,
+              child: Container(
+                  padding: const EdgeInsets.all(30.0),
+                  color: Colors.indigo,
+                  child: const Text("2")),
             ),
-            Container(
-              padding: const EdgeInsets.all(50.0),
-              color: Colors.green,
-              child: const Text("three"),
+            Expanded(
+              flex: 1,
+              child: Container(
+                  padding: const EdgeInsets.all(30.0),
+                  color: Colors.amber,
+                  child: const Text("3")),
             ),
           ],
         ),
+
+        // Column(
+        //   //mainAxisAlignment is used to align the children of the column widget
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+
+        //   children: <Widget>[
+        //     //we can add row and column
+        //     const Row(
+        //       children: <Widget>[
+        //         Text("Row-1"),
+        //         Text("Row-2"),
+        //       ],
+        //     ),
+        //     Container(
+        //       padding: const EdgeInsets.all(30.0),
+        //       color: Colors.cyan,
+        //       child: const Text("one"),
+        //     ),
+        //     Container(
+        //       padding: const EdgeInsets.all(40.0),
+        //       color: Colors.grey,
+        //       child: const Text("two"),
+        //     ),
+        //     Container(
+        //       padding: const EdgeInsets.all(50.0),
+        //       color: Colors.green,
+        //       child: const Text("three"),
+        //     ),
+        //   ],
+        // ),
 
         //we use row widget to align the children of the row widget
         // Row(
