@@ -39,7 +39,17 @@ class _MyWidgetState extends State<MyWidget> {
         backgroundColor: Colors.blue[400],
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        // children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map((quote) => QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  },
+                ))
+            .toList(),
         // '${quote.text} - ${quote.author}' is used to display the text and author of the quote
       ),
     );
